@@ -1,0 +1,23 @@
+<p>person works!</p>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Sexe</th>
+    <th>Etat</th>
+  </tr>
+  <tr *ngFor="let p of persons">
+    <td>{{p.id}}</td>
+    <td>{{p.name}}</td>
+    <td>{{p.age}}</td>
+    <td *ngIf="p.sexe=='femme'"><img src="../../assets/images/femme.jpg" width="30px"></td>
+    <td *ngIf="p.sexe=='homme'"><img src="../../assets/images/homme.jpg" width="30px"></td>
+    <td [ngSwitch]="p.age">
+      <div *ngSwitchCase="23">Adulte</div>
+      <div *ngSwitchCase="28">Adulte</div>
+      <div *ngSwitchCase="33">Adulte</div>
+      <div *ngSwitchCase="15">Jeune</div>
+    </td>
+  </tr>
+</table>
